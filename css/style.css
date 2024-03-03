@@ -1,0 +1,106 @@
+:root{
+    --pink-color: #f7ecde;
+    --orange-color: #fec260;
+    --orange-border-color: #d99c39;
+    --orange-box-shadow-color: #fec26055;
+
+    --black-color: #352e28;
+    --green-color: #3ca55c;
+
+    --correct-green-color: #198754;
+    --correct-box-shadow-color: rgba(25, 135, 84, 0.25);
+    --wrong-red-color: #dc3545;
+    --wrong-box-shadow-color: rgba(220,53,69,.25);
+
+    --green-visit-color: #9eb23b;
+    --green-visit-hover-bg-color: #8a9e23;
+    --green-visit-hover-border-color: #6e8018;
+
+    --yellow-color: #b5ac49;
+
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: var(--pink-color) ;
+}
+h1{
+    font-family: "Pacifico", cursive;
+    color: var(--black-color);
+    z-index: 1;
+    font-size: 3rem;
+}
+h1::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background-color: var(--orange-color);
+    /* border-bottom: var(--orange-color) solid 20px; */
+    width: 100%;
+    height: 25%;
+    z-index: -1;
+    transition: all 1s ease;
+}
+h1:hover::before{
+    height: 50%;
+}
+.box{
+    border: 2px dotted var(--black-color);
+    z-index: 1;
+}
+.box h2{
+    font-family: "Righteous", sans-serif;
+    background-image:  linear-gradient(to right, var(--green-color), var(--yellow-color)) ;
+    /* -webkit-background-clip: text; */
+    background-clip: text;
+    color: transparent;
+}
+.form-control:focus{
+    border-color: var(--orange-border-color) !important;
+    box-shadow: 0 0 0 .25rem var(--orange-box-shadow-color);
+}
+.btn.btn-visit{
+    background-color: var(--green-visit-color) ;
+    border-color: var(--green-visit-color) ;
+    transition: all 400ms;
+}
+.btn.btn-visit:hover{
+    background-color: var(--green-visit-hover-bg-color)  ;
+    border-color: var(--green-visit-hover-border-color) ;
+}
+
+input[type='text'].correct{
+    border-color: var(--correct-green-color) !important;
+    box-shadow: 0 0 0 .25rem var(--correct-box-shadow-color);
+}
+input[type='text'].wrong{
+    border-color: var(--wrong-red-color) !important;
+    box-shadow: 0 0 0 0.25rem var(--wrong-box-shadow-color);
+
+}
+input[type='text'].valid{
+    box-shadow: none ;
+}
+.error{
+    
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+.isValid,
+.notValid{
+    background-image: url(../imgs/right.svg); 
+    background-size: 1.2rem;
+    background-repeat: no-repeat;
+    background-position: right 0.56rem center ; 
+}
+.notValid{
+    background-image: url(../imgs/wrong.svg); 
+}
