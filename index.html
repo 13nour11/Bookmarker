@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <!-- bootstrap5 css style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- css style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="position-relative z-1">
+
+    <div class="content py-5">
+        <div class="container d-flex justify-content-center align-items-center flex-column">
+            <h1 class="py-2 position-relative ">Bookmarker</h1>
+            <div class="box border-end-0 border-start-0 px-3 py-4 mt-5 d-flex justify-content-center flex-column w-100 align-items-center">
+                <h2 class="mb-4"> 
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites  
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+
+                <div class="site-name mb-4 w-100">
+                    <label for="name" class="fw-bold pb-2"> <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                    <input type="text" name="site name" id="name" class="form-control" placeholder="Bookmark Name"/>
+                </div>
+
+                <div class="site-url mb-4 w-100">
+                    <label for="url" class="fw-bold pb-2"> <i class="fa-solid fa-link pe-2"></i> Site URL</label>
+                    <input type="text" name="site url" id="url" class="form-control" placeholder="Website URL"/>
+                </div>
+                
+                <button class="btn btn-danger px-5 bg-opacity-50" id="submitBtn">Submit</button>
+            </div>
+            <!-- start table for output -->
+            <table class="table text-center bg-light my-4">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent">
+                    <!-- <tr>
+                        <td id="index">1</td>
+                        <td id="websiteName">Mark</td>
+                        <td id="visit">
+                            <button class="btn btn-visit text-white">
+                                <i class="fa-solid fa-eye"></i>
+                                Visit
+                            </button>
+                        </td>
+                        <td id="delete">
+                            <button class="btn btn-danger">
+                                <i class="fa-solid fa-trash-can"></i>
+                                Delete
+                            </button>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <!-- end table for output -->
+        </div>
+    </div>
+
+    <!-- start error msg -->
+    <div class="error justify-content-center align-items-center z-2 position-absolute" id="errorMsg">
+        <div class="contect bg-light p-4 rounded-3 shadow">
+            <div class="icons d-flex justify-content-between py-3">
+                <div class="circles">
+                    <i class="fa-solid fa-circle text-danger pe-2 fa-lg" ></i>
+                    <i class="fa-solid fa-circle text-warning pe-2 fa-lg"></i>
+                    <i class="fa-solid fa-circle text-success fa-lg"></i>
+                </div>
+                <button class="btn border-0"  id="close"><i class="fa-solid fa-xmark fa-lg"></i></buton>
+            </div>
+            <h4 class="pt-2 ">
+                Site Name or Url is not valid, Please follow the <br>rules below :
+            </h4>
+            <div class="text my-3">
+                <i class="fa-regular fa-circle-right text-danger fa-lg px-1"></i>
+                <span class="fs-5">Site name must contain at least 3 characters</span>
+            </div>
+            <div class="text my-2">
+                <i class="fa-regular fa-circle-right text-danger fa-lg px-1"></i>
+                <span class="fs-5">Site URL must be a valid one</span>
+            </div>
+        </div>
+    </div>
+    <!-- end error msg -->
+
+    <!-- bootstrap5 js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- js code -->
+    <script src="js/index.js"></script>
+</body>
+</html>
